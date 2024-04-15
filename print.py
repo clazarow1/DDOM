@@ -1,9 +1,4 @@
 print("""\n
-
-
-
-
-
 # Original author: https://github.com/notnop
 # Original Modifier for the project: Endermanch (https://github.com/Endermanch/MalwareDatabase/blob/master/ddom.py)
 # Originally modified for Python 3
@@ -26,11 +21,11 @@ print("""\n
 #              &@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@%             executing these on your main system... unless you know
 #          %@@@@@@@@@@@,  . @@@@@@@#           @@@@@@@@ %  ,@@@@@@@@@@@(         what you're doing.
 #         @@@@@@@(        @@@@ &@@@@@         @@@@@( @@@@        (@@@@@@@        
-#         @@@@            @@@@     @  *     &  @     @@@@            @@@@        Thank you in advance!
-#         @@@             @@@@      @@@@   @@@@      @@@@             @@@        
-#         @@              @@@@@%    @@@@@#@@@@@    @@@@@@             .@@        
+#         @@@@            @@@@     @  *     &  @     @@@@            @@@@        This project requires Firefox--A browser to download the
+#         @@@             @@@@      @@@@   @@@@      @@@@             @@@        samples to the provided folder (Samples). If it isn't
+#         @@              @@@@@%    @@@@@#@@@@@    @@@@@@             .@@        downloaded, please run this program on Linux. Thank you!
 #         @&                %@@@@@@*#@@@@@@@@@ @@@@@@@(                @@        
-#         @                     .@@@ @@@@@@@@@ @@@                      @        
+#         @                     .@@@ @@@@@@@@@ @@@                      @        Thank you in advance!
 #                                    @@@@@@@@@                                   
 #                                %@@@@@@@@@@@@@@@,                               
 #             @.              @@@@@@@@@@@@@@@@@@@@@@@              *@            
