@@ -1,5 +1,5 @@
 # Imports files from pip (Python) library, if necessary
-# Please use the follwing command to install the necessary libraries:
+# Please use the following command to install the necessary libraries:
 # "pip install -r requirements.txt"
 # ------------------------------------------------
 
@@ -10,17 +10,10 @@ import urllib.error
 import urllib.parse
 import random 
 import hashlib 
-import requests 
+import requests
 import os
 import argparse
-import pyvirtualdisplay
-from selenium import webdriver
 import datetime
-
-
-timestamp_now = datetime.datetime.now().strftime('%m-%d-%Y')
-
-
 
 # end of imports for file
 # ------------------------------------------------
@@ -68,13 +61,11 @@ print("""\n
 # end of print
 # ------------------------------------------------
 
-# Flags/Arguements necessary to run
+# Flags/Arguments necessary to run
 
 parser = argparse.ArgumentParser(description='DDoM - Modified for Create PT 2023-2024 Project')
-parser.add_argument("-c", "--count", nargs=1, type=int, help="Defines number of malware samples you want, up to 5000. If nothing is present, the arguement is set to 5 by default.",
-                required=False, default=argparse.SUPPRESS, metavar="SAMPLES")
-parser.add_argument("-r", "--rename", help="[NOT RECOMMENDED] Makes the samples executable. Don't use this unless you're confident you won't execute them on your host.",
-                required=False, action="store_const", const=True)              
+parser.add_argument("-c", "--count", nargs=1, type=int, help="Defines number of malware samples you want, up to 100. If nothing is present, the arguement is set to 5 by default.",
+                required=False, default=argparse.SUPPRESS, metavar="SAMPLES")             
 
 def confirmation(question, default="no"):    
     valid = {"yes": True, "y": True, "ye": True,
@@ -117,9 +108,7 @@ headers = {
 } 
 
 print("""\nYou'll get these {} samples each from:
-\t# https://bazaar.abuse.ch/
 \t# http://vxvault.net
-\t# http://tracker.h3x.eu
 """.format(scount))
 
 confirmed = confirmation("Do you affirm to start downloading these {} samples?".format(scount), "no") # Confirmation prompt #1: Are you sure you want to download these samples?
@@ -138,6 +127,8 @@ if not confirmed:
     
 # Checking location of samples folder
     
+print("\n[*] Checking if Samples folder exists...")
+
 if not os.path.exists("/Samples"):
     print("\n[*] Samples folder does not exist. Creating folder...")
     os.makedirs("/Samples")
@@ -147,59 +138,45 @@ else:
     print("\n[*] Samples folder already exists. Downloading samples...")
 
 # ------------------------------------------------
-# Samples downloaded from bazaar.abuse.ch
-    
-print("\n[*] Downloading samples...")
-print("\n[*] Downloading samples from bazaar.abuse.ch...")
-for i in range(scount):
-    try:
-        url = "https://bazaar.abuse.ch/browse/{}".format(random.randint(1, 5000))
-        response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-            with open("Samples/bazaar.abuse.ch_{}.zip".format(i), "wb") as f:
-                f.write(response.content)
-                final_list.append("bazaar.abuse.ch_{}.zip".format(i))
-    except Exception as e:
-        print("Error: ", e)
 
+# start of downloading samples
 # Samples downloaded from vxvault.net
+
 print("\n[*] Downloading samples from vxvault.net...")
-for i in range(scount):
-    try:
-        url = "http://vxvault.net/URL_List.php"
-        response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-            with open("Samples/vxvault.net_{}.zip".format(i), "wb") as f:
-                f.write(response.content)
-                final_list.append("vxvault.net_{}.zip".format(i))
-    except Exception as e:
-        print("Error: ", e)
 
-# Samples downloaded from tracker.h3x.eu
+# Downloads original list from vxvault.net
+response = requests.get("http://vxvault.net/URL_List.php")
+os.makedirs("Samples", exist_ok=True)
+if response.status_code == 200:
+    with open("Samples/vxvault.net_websites.html", "wb") as f:
+        f.write(response.content)
 
-print("\n[*] Downloading samples from tracker.h3x.eu...")
-for i in range(scount):
-    try:
-        url = "http://tracker.h3x.eu/URL_List.php"
-        response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-            with open("Samples/tracker.h3x.eu_{}.zip".format(i), "wb") as f:
-                f.write(response.content)
-                final_list.append("tracker.h3x.eu_{}.zip".format(i))
-    except Exception as e:
-        print("Error: ", e)
-# end of downloading samples
-# ------------------------------------------------
-# start of renaming samples
 
-if "rename" in args:
-    print("\n[*] Renaming samples...")
-    for i in final_list:
-        try:
-            os.rename("Samples/{}".format(i), "Samples/{}.exe".format(i))
-        except Exception as e:
-            print("Error: ", e)
-# end of renaming samples
+# Downloads original list from vxvault.net, then downloads samples from the file provided
+# Opens the file from the original list and downloads the samples from the list, up to the
+# number of samples requested (i - 1, for simplicity)
+# If i == scount - 1, the loop breaks and the program will stop downloading samples
+
+if os.path.exists("Samples/vxvault.net_websites.html"):
+    with open("Samples/vxvault.net_websites.html", "r") as f:
+        content = f.read()
+        urls = re.findall(r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))", content)
+        i = 0
+        for url in urls:
+            try:
+                response = requests.get(url[0], headers=headers)
+                if response.status_code == 200:
+                    with open("Samples/vxvault.net_{}.exe".format(i), "wb") as f:
+                        f.write(response.content)
+                        final_list.append("vxvault.net_{}.exe".format(i))
+                        i += 1
+                        if i == scount - 1:
+                            break
+            except Exception as e:
+                print("Error: ", e)
+
+
+# end of downloading samples from vxvault.net
 # ------------------------------------------------
 # Final Print - Thanks for downloading samples
 
@@ -210,3 +187,4 @@ if(scount == i):
 else:
     print("\n[*] Error in downloading samples. Please try again later.")
     print("\n[*] Thank you for using this program!")
+# End of program
