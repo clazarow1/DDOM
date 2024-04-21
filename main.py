@@ -170,7 +170,7 @@ if os.path.exists("Samples/vxvault.net_websites.html"):
                         f.write(response.content)
                         final_list.append("vxvault.net_{}.exe".format(i))
                         i += 1
-                        if i == scount - 1:
+                        if i == scount:
                             break
             except Exception as e:
                 print("Error: ", e)
@@ -180,7 +180,7 @@ if os.path.exists("Samples/vxvault.net_websites.html"):
 # ------------------------------------------------
 # Final Print - Thanks for downloading samples
 
-if(scount == i):
+if(scount == i - 1):
     print("\n[*] {} sample(s) has been downloaded to your computer!".format(scount))
     print("\n[*] Samples are located in the 'Samples' folder.")
     print("\n[*] Thank you for using this program!")
