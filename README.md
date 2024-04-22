@@ -1,5 +1,5 @@
 ## Welcome to the Create PT Project!
 
-This project is my final for AP Computer Science Principles. Feel free to browse around, and feel free to use this as a guide to Python!
+This is my Create PT (Performance Task) for AP Computer Science Principles.
 
-This project is about downloading samples to your computer, and how they can impact your influence on how malware works from other computers.
+I decided to take a challenge and take on Python, and this taught me a lot of experience with using other languages for writing programs.
