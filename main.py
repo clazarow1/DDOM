@@ -25,7 +25,7 @@ print("""\n
 # Original author: https://github.com/notnop
 # Original Modifier for the project: Endermanch (https://github.com/Endermanch/MalwareDatabase/blob/master/ddom.py)
 # Originally modified for Python 3
-# This project is inspired by Endermanch, check him out here:
+# This project is inspired by Endermanch, check him out here: 
 # https://youtube.com/endermanch
 #
 #
