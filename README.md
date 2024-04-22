@@ -7,3 +7,5 @@ I decided to take a challenge and take on Python, and this taught me a lot of ex
 I hope this will serve as a guide for Python learning for your Create PT task in Computer Science Principles.
 
 This project as a whole was inspired by Endermanch on YouTube, who originally modified the code for Python. Take a look at his code in the "Original Files" folder, in which will contain everything he created, or check out his repository at https://github.com/endermanch/MalwareDatabase
+
+When I ran the "main.py" file, I included the samples I downloaded from this application alone, and hopes this will help you get on the ground running.
