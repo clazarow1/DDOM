@@ -17,15 +17,15 @@ print("""\n
 #                       @@@@@@      @@@@@@@@@@@      @@@@@@                      Please take responsibility when downloading these samples,
 #                       @@@@@@# @@@@@@@.   (@@@@@@@ @@@@@@@                      as these samples can damage your host system.
 #                      @@@@@@@@@@@               @@@@@@@@@@@                     
-#                  @@@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@                 I recommend using Linux for downloading samples, and not
-#              &@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@%             executing these on your main system... unless you know
-#          %@@@@@@@@@@@,  . @@@@@@@#           @@@@@@@@ %  ,@@@@@@@@@@@(         what you're doing.
-#         @@@@@@@(        @@@@ &@@@@@         @@@@@( @@@@        (@@@@@@@        
-#         @@@@            @@@@     @  *     &  @     @@@@            @@@@        This project requires Firefox--A browser to download the
-#         @@@             @@@@      @@@@   @@@@      @@@@             @@@        samples to the provided folder (Samples). If it isn't
-#         @@              @@@@@%    @@@@@#@@@@@    @@@@@@             .@@        downloaded, please run this program on Linux. Thank you!
+#                  @@@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@                 I am not responsible for any damage caused by these samples.
+#              &@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@%             Any damage caused by these samples is your at your own risk
+#          %@@@@@@@@@@@,  . @@@@@@@#           @@@@@@@@ %  ,@@@@@@@@@@@(         and may lead to permanent damage to your host system, making
+#         @@@@@@@(        @@@@ &@@@@@         @@@@@( @@@@        (@@@@@@@        you to reinstall your main Operating System.
+#         @@@@            @@@@     @  *     &  @     @@@@            @@@@        
+#         @@@             @@@@      @@@@   @@@@      @@@@             @@@        Thank you and have a great day!
+#         @@              @@@@@%    @@@@@#@@@@@    @@@@@@             .@@        
 #         @&                %@@@@@@*#@@@@@@@@@ @@@@@@@(                @@        
-#         @                     .@@@ @@@@@@@@@ @@@                      @        Thank you in advance!
+#         @                     .@@@ @@@@@@@@@ @@@                      @        
 #                                    @@@@@@@@@                                   
 #                                %@@@@@@@@@@@@@@@,                               
 #             @.              @@@@@@@@@@@@@@@@@@@@@@@              *@            
