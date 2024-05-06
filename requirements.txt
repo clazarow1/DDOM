@@ -1,11 +1,3 @@
-sys
-re
-urllib
-random
-hashlib
 requests
-argparse
 pyvirtualdisplay
 selenium
-webdriver
-datetime
