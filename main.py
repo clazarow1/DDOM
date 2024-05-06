@@ -97,6 +97,12 @@ if not "count" in args:
 else:
     scount = args.count[0]
 
+if scount >= 101:
+	scount = 100
+	print("[*] Number of samples is over the limit, going with 100 samples...")
+
+
+
 # End of help menu
 # ------------------------------------------------
 
