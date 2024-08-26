@@ -1,0 +1,73 @@
+import os
+import re
+import requests
+import pytest
+
+def get_confirmation(question, default="no"):
+    """Returns True if confirmation is 'yes', otherwise False."""
+    valid = {"yes": True, "y": True, "ye": True, "no": False, "n": False}
+    if default not in valid:
+        raise ValueError(f"Invalid default value: {default}")
+    return default.lower() in valid
+
+def download_samples(count):
+    """Mock function to simulate downloading samples."""
+    # This is a placeholder for actual download logic
+    print(f"Downloading {count} samples...")
+    # Simulate downloading process
+    return f"Mock downloading {count} samples"
+
+def main(count=5):
+    """Main function to perform operations."""
+    if count < 1 or count > 100:
+        raise ValueError("Count must be between 1 and 100.")
+    
+    print(f"Downloading {count} samples from vxvault.net...")
+    result = download_samples(count)
+    print(result)
+
+if __name__ == "__main__":
+    count = 5  # Default value
+    main(count)
+
+# Tests below this line
+
+def test_get_confirmation():
+    """Tests for the get_confirmation function."""
+    assert get_confirmation("Do you want to proceed?", "yes") is True
+    assert get_confirmation("Do you want to proceed?", "no") is False
+    assert get_confirmation("Do you want to proceed?", "y") is True
+    assert get_confirmation("Do you want to proceed?", "n") is False
+
+@pytest.fixture
+def mock_download_samples(monkeypatch):
+    """Fixture to mock download_samples function."""
+    def mock_download(count):
+        return f"Mock downloading {count} samples"
+    
+    monkeypatch.setattr("__main__.download_samples", mock_download)
+
+def test_download_samples(mock_download_samples):
+    """Tests for the download_samples function."""
+    result = download_samples(5)
+    assert result == "Mock downloading 5 samples"
+
+def test_main(monkeypatch):
+    """Tests for the main function."""
+    def mock_download(count):
+        return f"Mock downloading {count} samples"
+    
+    monkeypatch.setattr("__main__.download_samples", mock_download)
+    
+    # Capture the output of the main function
+    import io
+    import sys
+    output = io.StringIO()
+    sys.stdout = output
+    
+    main(5)
+    
+    # Reset stdout
+    sys.stdout = sys.__stdout__
+    
+    assert "Mock downloading 5 samples" in output.getvalue()
