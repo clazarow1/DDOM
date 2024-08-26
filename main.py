@@ -1,4 +1,8 @@
-# |-------------------------------------------------------------- |
+# (c) Caleb Lazarow, 2024. All Rights reserved. Code credits are given to the proper author(s) in print.
+# Failure to follow directions in the "LICENSE" file will result in an automatic deletion of your
+# fork of this project. Thank you for your cooperation.
+
+# | ------------------------------------------------------------- |
 # |     A NOTE TO AP/NON AP COMPUTER SCIENCE PRINCIPLES STUDENTS: |
 # |								  |
 # | 	Hello there,						  |
@@ -18,7 +22,7 @@
 # | 	Thank you,						  |
 # | 	Caleb Lazarow						  |
 # | 	Former APCSP student					  |
-# |-------------------------------------------------------------- |
+# | ------------------------------------------------------------- |
 
 
 # ------------------------------------------------
