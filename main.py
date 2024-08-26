@@ -1,3 +1,30 @@
+# |-------------------------------------------------------------- |
+# |     A NOTE TO AP/NON AP COMPUTER SCIENCE PRINCIPLES STUDENTS: |
+# |								  |
+# | 	Hello there,						  |
+# | 	This is my code, and it's being developed as we speak.	  |
+# |								  |
+# |	This is the code that I gave to my teacher and		  |
+# |	got some valuable feedback. You are allowed to use	  |
+# | 	this code as an example, and NOT copy directly out and	  |
+# | 	claim this as your own. Feel free to explore this and	  |
+# | 	find what variables are being used throughout the code.	  |
+# | 								  |
+# |	If you do copy the code directly, claim it as your own,	  |
+# |	and not give proper claims to who created the code (me),  |
+# |	I will make sure you will get a zero on this project, and |
+# | 	I will make sure you will not pass the AP test with a	  |
+# | 	teacher phone call to who copied my code.		  |
+# | 	Thank you,						  |
+# | 	Caleb Lazarow						  |
+# | 	Former APCSP student					  |
+# |-------------------------------------------------------------- |
+
+
+# ------------------------------------------------
+# Comments on what's going to happen (...or the friendly way of doing things)
+# Beginning of code segments
+
 # Imports files from pip (Python) library, if necessary
 # Please use the following command to install the necessary libraries:
 # "pip install -r requirements.txt"
