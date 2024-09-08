@@ -10,4 +10,4 @@ This project as a whole was inspired by Endermanch on YouTube, who originally mo
 
 When I ran the "main.py" file, I included the samples I downloaded from this application alone, and hopes this will help you get on the ground running.
 
-The site(s) provided on this page may be blocked by your firewall on your device or network. If this is being ran on a school computer, *THIS WILL NOT WORK.*
+The site(s) provided on this page may be blocked by your firewall on your device or network. If this is being ran on a school computer, **THIS WILL NOT WORK.**
