@@ -124,6 +124,7 @@ args = parser.parse_args()
 print(args)
 if not "count" in args:
     print("[*]  Argument was omitted - going with 5 samples by default")
+    print("[*] Please note, not all samples will be downloaded.")
     scount = 5
 else:
     scount = args.count[0]
@@ -151,11 +152,11 @@ print("""\nYou'll get these {} samples each from:
 
 confirmed = confirmation("Do you affirm to start downloading these {} samples?".format(scount), "no") # Confirmation prompt #1: Are you sure you want to download these samples?
 if not confirmed:
-    sys.exit(0)
+    sys.exit("[*] Thank you for using this application.")
 
 confirmed = confirmation("Last chance! Are you sure to download these {} samples from the internet?".format(scount), "no") #Confirmation prompt #2: Last chance to download samples
 if not confirmed:
-    sys.exit(0)
+    sys.exit("[*] Thank you for using this application.")
 
 # End of Variables / Confirmation prompts
 # ------------------------------------------------
