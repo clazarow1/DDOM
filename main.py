@@ -131,6 +131,7 @@ else:
 if scount >= 101:
 	scount = 100
 	print("[*] Number of samples is over the limit, going with 100 samples...")
+	print("[*] Please note, not all samples will be downloaded.")
 
 
 
@@ -169,7 +170,7 @@ print("\n[*] Checking if Samples folder exists...")
 if not os.path.exists("/Samples"):
     print("\n[*] Samples folder does not exist. Creating folder...")
     os.makedirs("/Samples")
-    print("\n[*] Folder created at /Samples")
+    print("\n[*] Folder created at Samples")
 
 else:
     print("\n[*] Samples folder already exists. Downloading samples...")
