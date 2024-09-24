@@ -124,7 +124,7 @@ args = parser.parse_args()
 print(args)
 if not "count" in args:
     print("[*]  Argument was omitted - going with 5 samples by default")
-    print("[*] Please note, not all samples will be downloaded.")
+    print("[*] Please note, not all samples may be downloaded.")
     scount = 5
 else:
     scount = args.count[0]
@@ -132,7 +132,7 @@ else:
 if scount >= 101:
 	scount = 100
 	print("[*] Number of samples is over the limit, going with 100 samples...")
-	print("[*] Please note, not all samples will be downloaded.")
+	print("[*] Please note, not all samples may be downloaded.")
 
 
 
